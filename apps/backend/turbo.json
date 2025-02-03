@@ -1,0 +1,9 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "env": ["WEATHER_BASE_URL", "WEATHER_API_KEY", "PORT"],
+      "outputs": ["dist/**"]
+    }
+  }
+}

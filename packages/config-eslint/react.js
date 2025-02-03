@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
 import tseslint from "typescript-eslint";
 import pluginReactHooks from "eslint-plugin-react-hooks";
+import pluginQuery from '@tanstack/eslint-plugin-query'
 import pluginReact from "eslint-plugin-react";
 import globals from "globals";
 import { config as baseConfig } from "./index.js";
@@ -28,10 +29,12 @@ export const config = [
   {
     plugins: {
       "react-hooks": pluginReactHooks,
+      '@tanstack/query': pluginQuery,
     },
     settings: { react: { version: "detect" } },
     rules: {
       ...pluginReactHooks.configs.recommended.rules,
+      ...pluginQuery.configs.recommended.rules,
       // React scope no longer necessary with new JSX transform.
       "react/react-in-jsx-scope": "off",
     },

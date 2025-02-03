@@ -1,5 +1,5 @@
 {
-  "name": "kitchen-sink",
+  "name": "weather-check",
   "private": true,
   "scripts": {
     "build": "turbo run build",
