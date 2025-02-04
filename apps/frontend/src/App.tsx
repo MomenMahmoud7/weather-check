@@ -25,7 +25,7 @@ function App() {
         <h1 className="font-bold text-6xl text-center py-14 bg-black text-white">
           Weather Check
         </h1>
-        <div className="max-w-2xl mx-auto py-10">
+        <div className="max-w-2xl mx-auto py-10 px-4">
           <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
         </div>
       </div>

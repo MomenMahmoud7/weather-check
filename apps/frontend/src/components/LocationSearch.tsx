@@ -33,28 +33,31 @@ const LocationSearch = () => {
 
   return (
     <div className="space-y-8">
-      <div className="flex items-center gap-4">
-        <Input
-          type="number"
-          min={-90}
-          max={90}
-          value={latitude}
-          onChange={onLatitudeChange}
-          placeholder="Latitude (-90 to 90)"
-          className={`w-40 ${+latitude > 90 || +latitude < -90 ? "border-red-300" : "border-zinc-200"}`}
-        />
-        <Input
-          type="number"
-          min={-180}
-          max={180}
-          value={longitude}
-          onChange={onLongitudeChange}
-          placeholder="Longitude (-180 to 180)"
-          className={`w-40 ${+longitude > 180 || +longitude < -180 ? "border-red-300" : "border-zinc-200"}`}
-        />
+      <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="flex flex-row w-full gap-4">
+          <Input
+            type="number"
+            min={-90}
+            max={90}
+            value={latitude}
+            onChange={onLatitudeChange}
+            placeholder="Latitude (-90 to 90)"
+            className={`w-full ${+latitude > 90 || +latitude < -90 ? "border-red-300" : "border-zinc-200"}`}
+          />
+          <Input
+            type="number"
+            min={-180}
+            max={180}
+            value={longitude}
+            onChange={onLongitudeChange}
+            placeholder="Longitude (-180 to 180)"
+            className={`w-full ${+longitude > 180 || +longitude < -180 ? "border-red-300" : "border-zinc-200"}`}
+          />
+        </div>
         <button
           onClick={handleSubmit}
           className="
+            w-full sm:w-auto
             px-6 py-3
             bg-black
             text-white
