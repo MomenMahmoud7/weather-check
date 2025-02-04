@@ -7,11 +7,14 @@ const useLocationSearchQuery = (text: string) =>
     enabled: !!text,
     queryKey: [QueryKeysT.LOCATION_SEARCH, text],
     queryFn: async () => {
-      const response = await axios.get(`http://localhost:5001/search`, {
-        params: {
-          query: text,
-        },
-      });
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/search`,
+        {
+          params: {
+            query: text,
+          },
+        }
+      );
 
       return response.data;
     },

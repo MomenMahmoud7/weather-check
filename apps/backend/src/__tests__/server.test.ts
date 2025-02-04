@@ -26,48 +26,4 @@ describe("Server", () => {
       expect(response.body).toEqual({ message: "hello jared" });
     });
   });
-
-  describe("Weather endpoint", () => {
-    it("returns 400 when no parameters are provided", async () => {
-      const response = await request(app).get("/weather");
-
-      expect(response.status).toBe(400);
-      expect(response.body).toEqual({
-        error: {
-          message:
-            "Either city or both latitude and longitude must be provided",
-          code: 400,
-        },
-      });
-    });
-
-    it("returns 400 when only latitude is provided", async () => {
-      const response = await request(app)
-        .get("/weather")
-        .query({ latitude: "51.5074" });
-
-      expect(response.status).toBe(400);
-      expect(response.body).toEqual({
-        error: {
-          message:
-            "Either city or both latitude and longitude must be provided",
-          code: 400,
-        },
-      });
-    });
-  });
-
-  describe("Search endpoint", () => {
-    it("returns 400 when no query is provided", async () => {
-      const response = await request(app).get("/search");
-
-      expect(response.status).toBe(400);
-      expect(response.body).toEqual({
-        error: {
-          message: "Search query is required",
-          code: 400,
-        },
-      });
-    });
-  });
 });

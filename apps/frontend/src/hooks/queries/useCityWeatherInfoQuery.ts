@@ -10,11 +10,14 @@ const useCityWeatherInfoQuery = () => {
     enabled: !!selectedCity,
     queryKey: [QueryKeysT.WEATHER_INFO, selectedCity],
     queryFn: async () => {
-      const response = await axios.get(`http://localhost:5001/weather`, {
-        params: {
-          city: selectedCity,
-        },
-      });
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/weather`,
+        {
+          params: {
+            city: selectedCity,
+          },
+        }
+      );
 
       return response.data;
     },

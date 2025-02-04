@@ -7,12 +7,15 @@ const useLocationWeatherInfoQuery = (longitude: string, latitude: string) =>
     enabled: !!longitude && !!latitude,
     queryKey: [QueryKeysT.WEATHER_INFO, latitude, longitude],
     queryFn: async () => {
-      const response = await axios.get(`http://localhost:5001/weather`, {
-        params: {
-          latitude,
-          longitude,
-        },
-      });
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/weather`,
+        {
+          params: {
+            latitude,
+            longitude,
+          },
+        }
+      );
 
       return response.data;
     },

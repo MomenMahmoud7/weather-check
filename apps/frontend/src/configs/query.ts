@@ -2,11 +2,13 @@ import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persist
 import { QueryClient } from "@tanstack/react-query";
 import { persistQueryClient } from "@tanstack/react-query-persist-client";
 
+const oneDay = 1000 * 60 * 60 * 24;
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      gcTime: 1000 * 60 * 60 * 24,
-      staleTime: 1000 * 60 * 60 * 24,
+      gcTime: oneDay,
+      staleTime: oneDay,
     },
   },
 });

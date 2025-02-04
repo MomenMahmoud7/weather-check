@@ -4,6 +4,7 @@
   ],
   "tasks": {
     "build": {
+      "env": ["VITE_API_URL"],
       "outputs": [
         "dist/**"
       ]
