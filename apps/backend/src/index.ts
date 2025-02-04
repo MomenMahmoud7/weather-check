@@ -33,7 +33,7 @@ interface WeatherError {
 }
 
 server.get(
-  "/weather",
+  "/api/weather",
   async (
     req: Request<object, object, object, WeatherQueryParams>,
     res: Response
@@ -71,7 +71,7 @@ server.get(
 );
 
 server.get(
-  "/search",
+  "/api/search",
   async (
     req: Request<object, object, object, SearchQueryParams>,
     res: Response

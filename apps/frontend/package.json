@@ -11,7 +11,9 @@
   },
   "jest": {
     "preset": "@repo/jest-presets/browser",
-    "setupFilesAfterEnv": ["<rootDir>/src/test/setup.ts"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/test/setup.ts"
+    ]
   },
   "dependencies": {
     "@tanstack/query-sync-storage-persister": "5.17.19",
@@ -38,7 +40,7 @@
     "@types/react-dom": "^19.0.3",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
